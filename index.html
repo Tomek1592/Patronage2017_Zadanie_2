@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>Score counter</title>
+		<link href="main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="buttons-wrapper">
+			<button class="add btn">+</button>
+		</div>
+
+		<div class="counters-wrapper">
+			<div id="score-1" class="score">
+				<h1><span class="counter-name">Score 1</span>
+					</br><span class="counter"></span></br></h1>
+				<form>
+					<button type="button" class="up btn btn-counter">+</button>
+					<button type="button" class="down btn btn-counter">-</button>
+					</br></br>
+					<div class="apiWrapp">
+						<button type="button" class="get btn">Get</button>
+						<input class="value" type="number">
+						<button type="button" class="set btn">Set</button>
+						<button type="button" class="reset btn">Reset</button>
+					</div>
+					<button type="button" class="delete btn">X</button>
+				</form>
+				<p class="validation"></p>
+			</div>
+			<div id="score-2" class="score">
+				<h1><span class="counter-name">Score 2</span>
+					</br><span class="counter"></span></br></h1>
+				<form>
+					<button type="button" class="up btn btn-counter">+</button>
+					<button type="button" class="down btn btn-counter">-</button>
+					</br></br>
+					<div class="apiWrapp">
+						<button type="button" class="get btn">Get</button>
+						<input class="value" type="number">
+						<button type="button" class="set btn">Set</button>
+						<button type="button" class="reset btn">Reset</button>
+					</div>
+					<button type="button" class="delete btn">X</button>
+				</form>
+				<p class="validation"> </p>
+			</div>
+			<div id="score-3" class="score">
+				<h1><span class="counter-name">Score 3</span>
+					</br><span class="counter"></span></br></h1>
+				<form>
+					<button type="button" class="up btn btn-counter">+</button>
+					<button type="button" class="down btn btn-counter">-</button>
+					</br></br>
+					<div class="apiWrapp">
+						<button type="button" class="get btn">Get</button>
+						<input class="value" type="number">
+						<button type="button" class="set btn">Set</button>
+						<button type="button" class="reset btn">Reset</button>
+					</div>
+					<button type="button" class="delete btn">X</button>
+				</form>
+				<p class="validation"></p>
+			</div>
+		</div>
+
+		<script src="score-counter.js"></script>
+		<script src="score-ui.js"></script>
+		<script src="new-counter.js"></script>
+
+		<script>
+			var score1 = new ScoreUI(document.getElementById("score-1"), 1, 0);
+			var score2 = new ScoreUI(document.getElementById("score-2"), 2, 10);
+			var score3 = new ScoreUI(document.getElementById("score-3"), 4, 100);
+		</script>
+	</body>
+</html>
