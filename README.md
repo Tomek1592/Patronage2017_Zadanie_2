@@ -28,4 +28,4 @@ Następne liczniki dostają kolejne numery, które nie zostały jeszcze wykorzys
 
 - Kiedy wartość licznika wynosi 0, przycisk "-" i "reset" są nieaktywne,
 - Kiedy wartość licznika jest maksymalna, przycisk "+" jest nieaktywny,
-- Dla nowo dodawanego licznika, od użytkownika pobierany jest rodzaj formatowania (wartość 1-4), oraz wartość początkowa.
+- Dla nowo dodawanego licznika, od użytkownika pobierany jest rodzaj formatowania (wartość 1-4), oraz wartość początkowa, w zależności od wybranego formatowania.
