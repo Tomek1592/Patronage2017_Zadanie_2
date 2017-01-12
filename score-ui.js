@@ -43,41 +43,41 @@ function ScoreUI(_domElement, _format, _startValue) {
 		i = 0,
 		value;
 
-        while(i < format) {
-            max = max + "9";
-            i++;
-        }
-
-        max = Number(max);
-
-        switch(type) {
-            case "up":
-        	if (counterValue == max - 1) {
-			scoreCounter.up();
-			toggleDisabled(".up", true);
-		} else if (counterValue == 0) {
-			scoreCounter.up();
-			toggleDisabled(".down", false);
-		} else {
-			scoreCounter.up();
+		while(i < format) {
+		    max = max + "9";
+		    i++;
 		}
-        	break;
-            case "down":
-        	if (counterValue == 1) {
-			toggleDisabled(".down", true);
-			self.domElement.querySelector(".reset").disabled = true;
-			self.domElement.querySelector(".reset").style.color = "grey";
-			scoreCounter.down();
-		} else if (counterValue == max) {
-			scoreCounter.down();
-			toggleDisabled(".up", false);
-		} else {
-			scoreCounter.down();
+
+		max = Number(max);
+
+		switch(type) {
+			case "up":
+				if (counterValue == max - 1) {
+					scoreCounter.up();
+					toggleDisabled(".up", true);
+				} else if (counterValue == 0) {
+					scoreCounter.up();
+					toggleDisabled(".down", false);
+				} else {
+					scoreCounter.up();
+				}
+				break;
+		    case "down":
+				if (counterValue == 1) {
+					toggleDisabled(".down", true);
+					self.domElement.querySelector(".reset").disabled = true;
+					self.domElement.querySelector(".reset").style.color = "grey";
+					scoreCounter.down();
+				} else if (counterValue == max) {
+					scoreCounter.down();
+					toggleDisabled(".up", false);
+				} else {
+					scoreCounter.down();
+				}
+				break;
+		    default:
+				break;
 		}
-        	break;
-            default:
-        	break;
-            }
 	}
 
 	function inputChecker(format) {
