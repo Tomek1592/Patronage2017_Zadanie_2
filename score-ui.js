@@ -2,8 +2,8 @@ function ScoreUI(_domElement, _format, _startValue) {
 	"use strict";
 
 	var self = this,
-		counterValue,
-		scoreCounter;
+	    counterValue,
+	    scoreCounter;
 
 	self.domElement = _domElement;
 	self.format = _format;
@@ -11,37 +11,37 @@ function ScoreUI(_domElement, _format, _startValue) {
 
 	counterValue,
 	scoreCounter = new ScoreCounter(
-		self.domElement.querySelector(".counter"),
-		self.format,
-		self.startValue
+	    self.domElement.querySelector(".counter"),
+	    self.format,
+	    self.startValue
 	);
 
 	counterValue = self.domElement.querySelector(".counter").innerHTML;
 
 	if (counterValue == 9 && self.format == 1 || 
-		counterValue == 99 && self.format == 2 || 
-		counterValue == 999 && self.format == 3 || 
-		counterValue == 9999 && self.format == 4) {
-		toggleDisabled(".up", true);
+	    counterValue == 99 && self.format == 2 || 
+	    counterValue == 999 && self.format == 3 || 
+	    counterValue == 9999 && self.format == 4) {
+	        toggleDisabled(".up", true);
 	}
 
 	if (counterValue == 0 ) {
-		toggleDisabled(".down", true);
-		self.domElement.querySelector(".reset").disabled = true;
-		self.domElement.querySelector(".reset").style.color = "grey";
+	    toggleDisabled(".down", true);
+	    self.domElement.querySelector(".reset").disabled = true;
+	    self.domElement.querySelector(".reset").style.color = "grey";
 	}
 
 	function toggleDisabled(selector, flag) {
-		self.domElement.querySelector(selector).disabled = flag;
-		(flag) ?
-			self.domElement.querySelector(selector).classList.add("grayed") :
-			self.domElement.querySelector(selector).classList.remove("grayed");
+	    self.domElement.querySelector(selector).disabled = flag;
+	    (flag) ?
+	        self.domElement.querySelector(selector).classList.add("grayed") :
+		self.domElement.querySelector(selector).classList.remove("grayed");
 	}
 
 	function btnChecker(format, type) {
-		var	max = "",
-			i = 0,
-			value;
+	    var max = "",
+		i = 0,
+		value;
 
         while(i < format) {
             max = max + "9";
@@ -51,47 +51,47 @@ function ScoreUI(_domElement, _format, _startValue) {
         max = Number(max);
 
         switch(type) {
-        	case "up":
-        		if (counterValue == max - 1) {
-					scoreCounter.up();
-					toggleDisabled(".up", true);
-				} else if (counterValue == 0) {
-					scoreCounter.up();
-					toggleDisabled(".down", false);
-				} else {
-					scoreCounter.up();
-				}
-        		break;
-        	case "down":
-        		if (counterValue == 1) {
-					toggleDisabled(".down", true);
-					self.domElement.querySelector(".reset").disabled = true;
-					self.domElement.querySelector(".reset").style.color = "grey";
-					scoreCounter.down();
-				} else if (counterValue == max) {
-					scoreCounter.down();
-					toggleDisabled(".up", false);
-				} else {
-					scoreCounter.down();
-				}
-        		break;
-        	default:
-        		break;
-        }
+            case "up":
+        	if (counterValue == max - 1) {
+			scoreCounter.up();
+			toggleDisabled(".up", true);
+		} else if (counterValue == 0) {
+			scoreCounter.up();
+			toggleDisabled(".down", false);
+		} else {
+			scoreCounter.up();
+		}
+        	break;
+            case "down":
+        	if (counterValue == 1) {
+			toggleDisabled(".down", true);
+			self.domElement.querySelector(".reset").disabled = true;
+			self.domElement.querySelector(".reset").style.color = "grey";
+			scoreCounter.down();
+		} else if (counterValue == max) {
+			scoreCounter.down();
+			toggleDisabled(".up", false);
+		} else {
+			scoreCounter.down();
+		}
+        	break;
+            default:
+        	break;
+            }
 	}
 
 	function inputChecker(format) {
-		var inputValue = self.domElement.querySelector(".value").value,
-			counterValue = self.domElement.querySelector(".counter").innerHTML,
-			bool1,
-			bool2,
-			bool3,
-			bool4,
-			max = "",
-			i = 0;
+	    var inputValue = self.domElement.querySelector(".value").value,
+		counterValue = self.domElement.querySelector(".counter").innerHTML,
+		bool1,
+		bool2,
+		bool3,
+		bool4,
+		max = "",
+		i = 0;
 
         while(i < format) {
-            max = max + "9";
+        	max = max + "9";
             i++;
         }
 
@@ -183,10 +183,8 @@ function ScoreUI(_domElement, _format, _startValue) {
 		validator(self.format);
 		inputChecker(self.format);
 		self.domElement.querySelector(".value").value = "";
-		
 	});
-
-
+	
 	self.domElement.querySelector(".delete").addEventListener("click", function(){ // delete button
 		var node = self.domElement;
 		
