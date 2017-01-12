@@ -82,13 +82,13 @@ function ScoreUI(_domElement, _format, _startValue) {
 
 	function inputChecker(format) {
 	    var inputValue = self.domElement.querySelector(".value").value,
-		counterValue = self.domElement.querySelector(".counter").innerHTML,
-		bool1,
-		bool2,
-		bool3,
-		bool4,
-		max = "",
-		i = 0;
+			counterValue = self.domElement.querySelector(".counter").innerHTML,
+			bool1,
+			bool2,
+			bool3,
+			bool4,
+			max = "",
+			i = 0;
 
         while(i < format) {
         	max = max + "9";
